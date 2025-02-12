@@ -1,0 +1,16 @@
+<html>
+    <head>
+        {% block head %}
+        <title>{% block title %}{% endblock %} - My Website</title>
+        {% endblock %}
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f5c345;
+            } 
+        </style>
+    </head>
+    <body>
+        {% block content %}{% endblock %}
+    </body>
+</html>
