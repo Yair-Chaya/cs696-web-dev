@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask and JavaScript</title>
+</head>
+<body>
+    <h1>Message from Flask:</h1>
+    <p id="message">Fetching...</p>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/api/data')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('message').textContent = data.message;
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                    document.getElementById('message').textContent = 'Not available';
+                });
+        });
+    </script>
+</body>
+</html>
